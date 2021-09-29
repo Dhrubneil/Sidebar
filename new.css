@@ -9,7 +9,7 @@ body {
       rgba(222, 222, 222, 0.3),
       rgba(222, 222, 222, 0.8)
     ),
-    url("../images/pexels-olia-danilevich-5088022.jpg") center/cover no-repeat
+    url("./pexels-olia-danilevich-5088022.jpg") center/cover no-repeat
       fixed;
   background-position-x: 63px;
 }
