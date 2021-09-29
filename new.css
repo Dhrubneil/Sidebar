@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Mukta Mahee", sans-serif;
+  background: linear-gradient(
+      rgba(222, 222, 222, 0.3),
+      rgba(222, 222, 222, 0.8)
+    ),
+    url("../images/pexels-olia-danilevich-5088022.jpg") center/cover no-repeat
+      fixed;
+  background-position-x: 63px;
+}
+
+.landing {
+  display: flex;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 4rem;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  box-shadow: 2px 3px 5px rgb(127, 120, 127);
+}
+
+.side-bar::-webkit-scrollbar {
+  width: 0.25rem;
+  background: snow;
+}
+
+.side-bar::-webkit-scrollbar-thumb {
+  background: slategray;
+}
+
+.single-item {
+  font-size: 1.2rem;
+
+  text-align: center;
+  justify-content: center;
+  color: #747474;
+  padding: 0.75rem 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  position: relative;
+}
+
+.single-item:hover {
+  background: #87ceeb;
+  /* background: rgb(165, 4, 71); */
+}
+
+.single-item::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 110%;
+}
+.single-item:hover::after {
+  content: "";
+}
+
+.icon {
+  min-width: 23.98px;
+}
+.single-item:hover .icon {
+  transition: all 1s ease;
+  animation: polti 1.5s 1 forwards;
+}
+
+@keyframes polti {
+  25% {
+    transform: scale(1.4) rotateX(360deg);
+  }
+  95% {
+    transform: scale(1.4) translateX(600%);
+    /* opacity: 0; */
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.4) translateX(600%);
+  }
+}
+
+.option {
+  display: block;
+  transform: scale(0);
+  position: absolute;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  top: 0%;
+  left: 100%;
+
+  background: skyblue;
+  /* background: rgb(165, 4, 71); */
+
+  min-width: 200px;
+  min-height: 50px;
+
+  text-align: left;
+  align-items: center;
+
+  transition: all 0.5s ease-in-out 0.5s;
+  border-right: 4px solid rgb(127, 120, 127);
+}
+
+.single-item:hover .option {
+  transform: scale(1);
+  opacity: 0.8;
+}
+
+.icon-heading {
+  letter-spacing: 1px;
+}
+.icon-detail {
+  font-size: 1rem;
+}
+
+.intro {
+  text-align: center;
+  width: 65vw;
+  max-height: 5rem;
+  color: #f2f2f2;
+  font-size: 3rem;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  margin: 15rem auto 3rem auto;
+  box-sizing: border-box;
+
+  /* border: 2px solid green; */
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.intro-text {
+  position: relative;
+  animation: intro 4s 1 forwards;
+}
+
+@keyframes intro {
+  from {
+    transform: scale(0.2);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#pink-ball,
+#neon-ball,
+#purple-ball {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#pink-ball {
+  background: rgb(165, 4, 71);
+  top: 47%;
+  right: 2%;
+  transform: scale(0);
+  animation: redBallBlink 2.5s ease-in-out 3.8s 1 forwards;
+}
+#neon-ball {
+  background: lime;
+  top: 32%;
+  right: -4%;
+  transform: scale(0);
+  animation: neonBallBlink 2.7s ease-in-out 4s 1 forwards;
+}
+#purple-ball {
+  background: purple;
+  top: 57%;
+  right: -5%;
+  transform: scale(0);
+  animation: purpleBallBlink 2.9s ease-in-out 4.2s 1 forwards;
+}
+
+@keyframes redBallBlink {
+  0% {
+    transform: scale(0.5);
+    background: rgb(165, 4, 71);
+  }
+  25% {
+    transform: scale(1);
+    background: lime;
+  }
+  50% {
+    transform: scale(1.1);
+    background: purple;
+  }
+  75% {
+    transform: scale(1.1);
+    background: rgb(165, 4, 71);
+  }
+  100% {
+    transform: scale(0);
+    background: rgb(165, 4, 71);
+    /* right: 4%; */
+  }
+}
+
+@keyframes neonBallBlink {
+  0% {
+    transform: scale(0.5);
+    background: lime;
+  }
+  25% {
+    transform: scale(1);
+    background: purple;
+  }
+  50% {
+    transform: scale(1.1);
+    background: rgb(165, 4, 71);
+  }
+  75% {
+    transform: scale(1.1);
+    background: lime;
+  }
+  100% {
+    transform: scale(0);
+    background: lime;
+    /* right: 10%; */
+  }
+}
+
+@keyframes purpleBallBlink {
+  0% {
+    transform: scale(0.5);
+    background: purple;
+  }
+  25% {
+    transform: scale(1);
+    background: rgb(165, 4, 71);
+  }
+  50% {
+    transform: scale(1.1);
+    background: lime;
+  }
+  75% {
+    transform: scale(1.1);
+    background: purple;
+  }
+  100% {
+    transform: scale(0);
+    background: purple;
+    /* right: 9%; */
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #pink-ball {
+    right: 14%;
+  }
+  #neon-ball {
+    right: 9%;
+  }
+  #purple-ball {
+    right: 8.5%;
+    top: 58%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #pink-ball {
+    right: 20%;
+  }
+  #neon-ball {
+    right: 16%;
+  }
+  #purple-ball {
+    right: 15%;
+  }
+}
+
+@media screen and (min-width: 868px) {
+  .intro {
+    color: #747474;
+  }
+  #pink-ball {
+    right: 25%;
+  }
+  #neon-ball {
+    top: 30%;
+    right: 21.5%;
+  }
+  #purple-ball {
+    top: 58%;
+    right: 20.5%;
+  }
+}
+
+@media screen and (min-width: 1044px) {
+  #pink-ball {
+    right: 29%;
+  }
+  #neon-ball {
+    top: 30%;
+    right: 26%;
+  }
+  #purple-ball {
+    top: 59%;
+    right: 25.5%;
+  }
+}
+
+@media screen and (min-width: 1256px) {
+  #pink-ball {
+    right: 28.5%;
+  }
+  #neon-ball {
+    top: 30%;
+    right: 26%;
+  }
+  #purple-ball {
+    top: 59.5%;
+    right: 25.5%;
+  }
+}
+
+@keyframes showTriangles {
+  from {
+    /* transform: scale(0.2); */
+    transform: scaleX(0.3) scaleY(0.6) rotateX(-30deg) rotate(-15deg);
+
+    opacity: 0.2;
+  }
+
+  to {
+    /* transform: scale(1); */
+    transform: scaleX(0.7) scaleY(1.3) rotateX(-30deg) rotate(-15deg);
+
+    opacity: 1;
+  }
+}
+
+.triangles {
+  width: 125px;
+  height: 125px;
+  /* max-height: 125px; */
+  box-sizing: border-box;
+  position: relative;
+  margin: 1rem auto;
+  padding: 1rem;
+  transform: scale(0);
+  /* border: 2px solid green; */
+  /* transform: scaleX(0.7) scaleY(1.3) rotateX(-30deg) rotate(-15deg); */
+  animation: showTriangles 2s linear 4s 1 forwards;
+}
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 40%;
+  top: 7%;
+  border-bottom: 35px solid transparent;
+  border-left: 15px solid rgb(165, 4, 71);
+  border-top: 15px solid transparent;
+  transform: rotate(45deg);
+}
+
+.triangle1 {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 26%;
+  left: 26%;
+
+  border-bottom: 15px solid purple;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+  /* transform: rotate(10deg); */
+}
+
+.triangle2 {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 60%;
+  top: 7%;
+  transform: rotate(-45deg);
+
+  border-bottom: 35px solid transparent;
+  border-right: 15px solid rgb(23, 148, 23);
+  border-top: 15px solid transparent;
+}
